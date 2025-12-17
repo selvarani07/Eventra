@@ -1,15 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --color-primary: #0F172A; /* Midnight Blue */
-  --color-secondary: #1E293B; /* Slate Blue */
-  --color-accent: #2DD4BF; /* Mint Green */
-  --color-accent-hover: #67E8F9; /* Soft Cyan */
-  --color-bg: #E5E7EB; /* Light Gray */
-  --color-surface: #FFFFFF; /* Pure White */
+  --color-primary: #0F172A;
+  /* Midnight Blue */
+  --color-secondary: #1E293B;
+  /* Slate Blue */
+  --color-accent: #2DD4BF;
+  /* Mint Green */
+  --color-accent-hover: #14B8A6;
+  /* Darker Mint */
+  --color-bg: #E5E7EB;
+  /* Light Gray */
+  --color-surface: #FFFFFF;
+  /* Pure White */
   --color-text-main: #0F172A;
-  --color-text-muted: #94A3B8;
-  --color-error: #F87171;
-  --color-warning: #FBBF24;
-  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-text-muted: #64748B;
+  --color-error: #EF4444;
+  --color-success: #10B981;
+  --font-main: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
 }
 
 body {
@@ -21,15 +30,50 @@ body {
   min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4,
+5 {
+  font-family: var(--font-heading);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-glass {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .animate-fade-in {
@@ -70,7 +114,9 @@ body {
   padding: 1.5rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #CBD5E1;
@@ -79,7 +125,8 @@ input, select, textarea {
   box-sizing: border-box;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: 2px solid var(--color-accent);
   border-color: transparent;
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Lock, User } from 'lucide-react';
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: '', password: '' });
@@ -21,7 +23,7 @@ const Login = () => {
 
             if (res.ok) {
                 localStorage.setItem('token', data.token);
-                navigate('/dashboard');
+                navigate('/dashboard/resources');
             } else {
                 setError(data.error || 'Login failed');
             }
@@ -31,36 +33,79 @@ const Login = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '4rem' }}>
-            <div className="card" style={{ width: '100%', maxWidth: '400px' }}>
-                <h2 style={{ textAlign: 'center', color: 'var(--color-primary)' }}>Welcome Back</h2>
+        <div style={{
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'radial-gradient(circle at center, #1E293B 0%, #0F172A 100%)',
+            padding: '2rem'
+        }}>
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="glass-panel"
+                style={{
+                    width: '100%',
+                    maxWidth: '420px',
+                    padding: '3rem',
+                    borderRadius: '1.5rem',
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                }}
+            >
+                <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                    <h2 style={{ fontSize: '2rem', color: 'white', marginBottom: '0.5rem' }}>Welcome Back</h2>
+                    <p style={{ color: '#94A3B8' }}>Enter your credentials to access the workspace.</p>
+                </div>
 
-                {error && <div style={{ color: 'var(--color-error)', marginBottom: '1rem', textAlign: 'center' }}>{error}</div>}
+                {error && (
+                    <div style={{ background: 'rgba(239, 68, 68, 0.1)', color: '#F87171', padding: '0.75rem', borderRadius: '0.5rem', marginBottom: '1.5rem', fontSize: '0.9rem', textAlign: 'center' }}>
+                        {error}
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit}>
-                    <div style={{ marginBottom: '1rem' }}>
-                        <label>Username</label>
+                    <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
+                        <label style={{ color: '#CBD5E1', display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Username</label>
+                        <User size={18} style={{ position: 'absolute', top: '38px', left: '12px', color: '#94A3B8' }} />
                         <input
                             type="text"
                             value={formData.username}
                             onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                             required
+                            style={{
+                                width: '100%', padding: '0.75rem 0.75rem 0.75rem 2.5rem',
+                                borderRadius: '0.5rem', border: '1px solid #334155',
+                                background: 'rgba(15, 23, 42, 0.5)', color: 'white'
+                            }}
                         />
                     </div>
 
-                    <div style={{ marginBottom: '1.5rem' }}>
-                        <label>Password</label>
+                    <div style={{ marginBottom: '2rem', position: 'relative' }}>
+                        <label style={{ color: '#CBD5E1', display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem' }}>Password</label>
+                        <Lock size={18} style={{ position: 'absolute', top: '38px', left: '12px', color: '#94A3B8' }} />
                         <input
                             type="password"
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                             required
+                            style={{
+                                width: '100%', padding: '0.75rem 0.75rem 0.75rem 2.5rem',
+                                borderRadius: '0.5rem', border: '1px solid #334155',
+                                background: 'rgba(15, 23, 42, 0.5)', color: 'white'
+                            }}
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Login</button>
+                    <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '1rem', fontSize: '1rem', boxShadow: '0 0 15px rgba(45, 212, 191, 0.2)' }}>
+                        Sign In
+                    </button>
                 </form>
-            </div>
+
+                <div style={{ marginTop: '2rem', textAlign: 'center', color: '#94A3B8', fontSize: '0.9rem' }}>
+                    Don't have an account? <Link to="/register" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Register here</Link>
+                </div>
+            </motion.div>
         </div>
     );
 };

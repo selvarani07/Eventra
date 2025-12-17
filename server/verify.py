@@ -58,9 +58,9 @@ def run_test():
         "resource_id": resource_id
     })
     if res.status_code == 200:
-        print("   ✅ Allocation 1 Successful")
+        print("   [OK] Allocation 1 Successful")
     else:
-        print(f"   ❌ Allocation 1 Failed: {res.text}")
+        print(f"   [FAIL] Allocation 1 Failed: {res.text}")
 
     # 5. Allocate 2 -> Fail
     print("5. Allocating Event 2 (Conflict)...")
@@ -69,9 +69,9 @@ def run_test():
         "resource_id": resource_id
     })
     if res.status_code == 409:
-        print("   ✅ Conflict Detected Correctly (409)")
+        print("   [OK] Conflict Detected Correctly (409)")
     else:
-        print(f"   ❌ Failed to detect conflict. Status: {res.status_code}")
+        print(f"   [FAIL] Failed to detect conflict. Status: {res.status_code}")
 
 if __name__ == "__main__":
     time.sleep(2) # Give server a moment
