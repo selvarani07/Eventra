@@ -1,14 +1,25 @@
 {
-    "name": "eventra-root",
-    "version": "1.0.0",
-    "description": "Event Scheduling System",
-    "scripts": {
-        "start": "concurrently \"npm run server\" \"npm run client\"",
-        "server": "cd server && python app.py",
-        "client": "npm run dev --prefix client",
-        "install-all": "pip install -r server/requirements.txt && npm install --prefix client"
-    },
-    "devDependencies": {
-        "concurrently": "^9.2.1"
-    }
+  "name": "eventra-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "axios": "^1.13.2"
+  }
 }
