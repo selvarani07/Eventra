@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import headerImage from '../assets/header_allocations.png';
+import headerImage from '../../assets/header_allocations.png';
 
 const Allocations = () => {
     const [allocations, setAllocations] = useState([]);

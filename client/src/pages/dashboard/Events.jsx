@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, AlignLeft, Plus } from 'lucide-react';
 import { motion } from 'framer-motion';
-import headerImage from '../assets/header_events.png';
+import headerImage from '../../assets/header_events.png';
 
 const Events = () => {
     const [events, setEvents] = useState([]);

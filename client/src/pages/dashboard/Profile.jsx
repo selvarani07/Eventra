@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { LogOut, User, Mail, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import heroImage from '../../assets/hero_illustration.png';
+
 const Profile = () => {
     const navigate = useNavigate();
 
@@ -22,7 +24,7 @@ const Profile = () => {
                 position: 'relative',
                 overflow: 'hidden'
             }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'url(/hero_illustration.png) center/cover', opacity: 0.1 }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: `url(${heroImage}) center/cover`, opacity: 0.1 }} />
             </div>
 
             <div style={{ padding: '0 2rem' }}>

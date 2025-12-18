@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Box, User, Monitor } from 'lucide-react';
 import { motion } from 'framer-motion';
-import headerImage from '../assets/header_resources.png';
+import headerImage from '../../assets/header_resources.png';
 
 const Resources = () => {
     const [resources, setResources] = useState([]);

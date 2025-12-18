@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import { motion } from 'framer-motion';
-import headerImage from '../assets/header_analytics.png';
+import headerImage from '../../assets/header_analytics.png';
 
 const Reports = () => {
     const [stats, setStats] = useState([]);
