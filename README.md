@@ -1,5 +1,6 @@
 A Flask-based web application for scheduling events, allocating shared resources, detecting time conflicts, and generating resource utilization reports.
-video link -
+
+video link -https://drive.google.com/file/d/1w-3FwMR4iFx2xPq656GXalaDlYzgoEYj/view?usp=sharing
 
 screen shots:
 <img width="1889" height="882" alt="image" src="https://github.com/user-attachments/assets/cb515b75-c98e-4804-abde-65f1995779d8" />
