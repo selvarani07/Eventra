@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 node_modules
 dist
 .env
 .DS_Store
 coverage
+=======
+node_modules
+dist
+.env
+.DS_Store
+coverage
+>>>>>>> 30f899d2e5f3d3ed89e0baecdbdc1ff0ecb3dc79
