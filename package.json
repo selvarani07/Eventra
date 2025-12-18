@@ -1,0 +1,14 @@
+{
+    "name": "eventra-root",
+    "version": "1.0.0",
+    "description": "Event Scheduling System",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && python app.py",
+        "client": "npm run dev --prefix client",
+        "install-all": "pip install -r server/requirements.txt && npm install --prefix client"
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1"
+    }
+}
